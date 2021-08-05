@@ -5,7 +5,7 @@ This project is a demonstration of a simple real-time messaging app. The main te
 * Real-time messaging using [https://socket.io/](Socket.IO)
 * Users can have avatars
 * Users can hide messages after reading them
-* Users can 
+* Message timestamps are displayed in relative time
 * Dependency management with [https://yarnpkg.com/](yarn)
 * Linting with [https://github.com/google/gts](Google GTS)
 * UI Components from [https://ant.design/](Ant Design)
