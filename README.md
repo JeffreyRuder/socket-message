@@ -2,7 +2,7 @@
 
 ## About
 This project is a demonstration of a simple real-time messaging app. The main technologies used are React, Node, Socket.IO, and Typescript. Features:
-* Real-time messaging using (Socket.IO)[https://socket.io/]
+* Real-time messaging using [Socket.IO](https://socket.io/)
 * Users can have avatars
 * Users can hide messages after reading them
 * Message timestamps are displayed in relative time
