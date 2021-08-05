@@ -13,7 +13,7 @@ This project is a demonstration of a simple real-time messaging app. The main te
 * Unit tests with Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## How to Run Locally
-To run this project locally in development/demo mode, you will need to run the server and one or more clients. You can do this by opening multiple bash terminal tabs, for example. This project uses [yarn](https://yarnpkg.com/) for package management and scripting, so you may want to install the yarn CLI on your machine.
+To run this project locally in development/demo mode, you will need to run the server and one or more clients. You can do this by opening multiple bash terminal tabs, for example. This project uses [yarn](https://yarnpkg.com/) for package management and scripting, so install it on your machine if needed.
 
 ### Running the Server
 * Make sure you have cloned the project
