@@ -19,8 +19,9 @@ export const Editor = (props: EditorProps) => {
       <Form.Item>
         <Input.TextArea
           maxLength={255}
-          rows={4}
           onChange={onChange}
+          placeholder={'Enter up to 255 characters.'}
+          rows={4}
           value={value}
         />
       </Form.Item>

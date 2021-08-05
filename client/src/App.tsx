@@ -34,21 +34,23 @@ const loadCurrentUser = () => {
 };
 
 export const App = () => {
+  // useState hooks
   const [messages, setMessages] = useState<Message[]>([]);
   const [submitting, setSubmitting] = useState<boolean>(false);
 
   const currentProfile = loadCurrentUser();
 
+  // initialize Socket.IO
   const socket = io('http://localhost:3001');
 
   socket.on('connect_error', (err: Error) => {
     console.error(`connect_error: ${err.message}`);
   });
-
   socket.on('message', (newMessage: Message) => {
     setMessages([...messages, newMessage]);
   });
 
+  // handle UI updates
   const handleHide = (item: Message) => {
     setMessages(messages.filter(msg => msg.id !== item.id));
   };
@@ -71,6 +73,7 @@ export const App = () => {
     </span>,
   ];
 
+  // render app
   return (
     <div style={{padding: '50px'}}>
       <List

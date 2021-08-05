@@ -10,9 +10,10 @@ This project is a demonstration of a simple real-time messaging app. The main te
 * Linting with [Google GTS](https://github.com/google/gts)
 * UI Components from [Ant Design](https://ant.design/)
 * Default React configuration from [Create React App](https://create-react-app.dev/)
+* Unit tests with Jest and [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/)
 
 ## How to Run Locally
-To run this project locally in development/demo mode, you will need to run the server and one or more clients. You can do this by opening multiple bash terminal tabs, for example. This project uses [https://yarnpkg.com/](yarn) for package management and scripting, so you may want to install the yarn CLI on your machine.
+To run this project locally in development/demo mode, you will need to run the server and one or more clients. You can do this by opening multiple bash terminal tabs, for example. This project uses [yarn](https://yarnpkg.com/) for package management and scripting, so you may want to install the yarn CLI on your machine.
 
 ### Running the Server
 * Make sure you have cloned the project
@@ -32,7 +33,7 @@ To run this project locally in development/demo mode, you will need to run the s
 * Run another instance of the client using a command like `PORT=3003 REACT_APP_PROFILE=2 yarn start` so the two demo users can message each other
 
 ## App Demonstration
-This app uses [https://socket.io/](Socket.IO) for real-time messaging. Here are some things to try:
+This app uses [Socket.IO](https://socket.io/) for real-time messaging. Here are some things to try:
 * Run the server and two clients.
 * Open one browser window directed to each client (`http://localhost:3002` and `http://localhost:3003` for example).
 * Add a message from one client's window.
@@ -47,6 +48,9 @@ Review the `package.json` files for the client and server to see additional scri
 * Server's CORS policy is probably too accepting
 * Persist message data in a database
 * Implement real user authentication and user data persistence
+* More client, server, database configuration options
+* More testing on client and server
+* Setup proper deployment and deployment pipeline
 * Implement multiple message channels (such as `#homework` and `#general`)
 * Encrypt messages end-to-end
 * User management tools, like allowing a user to block or mute another user
