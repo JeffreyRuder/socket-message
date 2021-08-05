@@ -43,6 +43,8 @@ This app uses [Socket.IO](https://socket.io/) for real-time messaging. Here are 
 ## Other Available Scripts
 Review the `package.json` files for the client and server to see additional scripts, such as scripts for linting, fixing linter errors, and scripting. If I were onboarding other developers for this project, I would recommend installing relevant editor plugins (such as Typescript and ESLint plugins for VSCode).
 
+There are some basic front-end tests in the clint code base. Navigate to the `client` directory and run `yarn test` to run them.
+
 ## Opportunities for More Development
 * Server and clients should communicate via https, not http
 * Server's CORS policy is probably too accepting
