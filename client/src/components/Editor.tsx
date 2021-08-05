@@ -17,7 +17,12 @@ export const Editor = (props: EditorProps) => {
   return (
     <>
       <Form.Item>
-        <Input.TextArea rows={4} onChange={onChange} value={value} />
+        <Input.TextArea
+          maxLength={255}
+          rows={4}
+          onChange={onChange}
+          value={value}
+        />
       </Form.Item>
       <Form.Item>
         <Button

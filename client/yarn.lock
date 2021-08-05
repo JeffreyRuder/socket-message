@@ -1884,15 +1884,10 @@
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/@types/minimist/-/minimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha1-7nceK6Sz3Fs3KTXVSf2WF780W4w=
 
-"@types/node@*":
+"@types/node@*", "@types/node@^16.4.12":
   version "16.4.12"
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/@types/node/-/node-16.4.12.tgz#961e3091f263e6345d2d84afab4e047a60b4b11b"
   integrity sha1-lh4wkfJj5jRdLYSvq04EemC0sRs=
-
-"@types/node@^14.11.2":
-  version "14.17.9"
-  resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/@types/node/-/node-14.17.9.tgz#b97c057e6138adb7b720df2bd0264b03c9f504fd"
-  integrity sha1-uXwFfmE4rbe3IN8r0CZLA8n1BP0=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1975,6 +1970,11 @@
   integrity sha1-XoienoHpQkXHW2RQYA4cXqKHiuo=
   dependencies:
     source-map "^0.6.1"
+
+"@types/uuid@^8.3.1":
+  version "8.3.1"
+  resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
+  integrity sha1-GjKWnPjwNks9jIr5zDVVt4Bd8U8=
 
 "@types/webpack-sources@*":
   version "2.1.1"
@@ -4203,7 +4203,7 @@ date-fns@2.x:
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/date-fns/-/date-fns-2.23.0.tgz#4e886c941659af0cf7b30fafdd1eaa37e88788a9"
   integrity sha1-TohslBZZrwz3sw+v3R6qN+iHiKk=
 
-dayjs@1.x:
+dayjs@1.x, dayjs@^1.10.6:
   version "1.10.6"
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/dayjs/-/dayjs-1.10.6.tgz#288b2aa82f2d8418a6c9d4df5898c0737ad02a63"
   integrity sha1-KIsqqC8thBimydTfWJjAc3rQKmM=
@@ -4931,6 +4931,11 @@ eslint-plugin-react@^7.21.5:
     prop-types "^15.7.2"
     resolve "^2.0.0-next.3"
     string.prototype.matchall "^4.0.5"
+
+eslint-plugin-simple-import-sort@^7.0.0:
+  version "7.0.0"
+  resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/eslint-plugin-simple-import-sort/-/eslint-plugin-simple-import-sort-7.0.0.tgz#a1dad262f46d2184a90095a60c66fef74727f0f8"
+  integrity sha1-odrSYvRtIYSpAJWmDGb+90cn8Pg=
 
 eslint-plugin-testing-library@^3.9.2:
   version "3.10.2"
@@ -10955,7 +10960,7 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-socket.io-client@^4.1.3:
+socket.io-client@4.1.3:
   version "4.1.3"
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/socket.io-client/-/socket.io-client-4.1.3.tgz#236daa642a9f229932e00b7221e843bf74232a62"
   integrity sha1-I22qZCqfIpky4AtyIehDv3QjKmI=
@@ -12037,7 +12042,7 @@ uuid@^3.3.2, uuid@^3.4.0:
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha1-sj5DWK+oogL+ehAK8fX4g/AgB+4=
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "http://repo.frg.tech/artifactory/api/npm/all-npm-repos/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha1-gNW1ztJxu5r2xEXyGhoExgbO++I=

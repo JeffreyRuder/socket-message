@@ -3,6 +3,13 @@ import {Server, Socket} from 'socket.io';
 
 const PORT = 3001;
 
+interface Message {
+  id: string;
+  sender: Object;
+  text: string;
+  time: Date;
+}
+
 const httpServer = createServer();
 const io = new Server(httpServer, {
   cors: {
@@ -12,9 +19,7 @@ const io = new Server(httpServer, {
 });
 
 io.on('connection', (socket: Socket) => {
-  console.log(`socket id ${socket.id}: user connected`);
-
-  socket.on('send-message', (message: any) => {
+  socket.on('send-message', (message: Message) => {
     console.log('message received', message);
     io.emit('message', message);
   });

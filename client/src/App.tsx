@@ -1,43 +1,75 @@
 import './App.css';
 
-import {Comment, Layout, List} from 'antd';
+import {Avatar, Comment, List} from 'antd';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import {useState} from 'react';
-import {Message} from './Message';
-
 import {io} from 'socket.io-client';
-import {Editor} from './Editor';
+import {v4 as uuidv4} from 'uuid';
+
+import {Editor} from './components/Editor';
+import {
+  AnonymousProfile,
+  DemoUser1,
+  DemoUser2,
+  UserProfile,
+} from './data/profiles';
+import {Message} from './interfaces/Message';
+
+// add relativeTime plugin to support "from now" and "ago" datetime formatting
+dayjs.extend(relativeTime);
+
+// use environment variable to load a demo user
+const loadCurrentUser = () => {
+  const profileEnv = process.env.REACT_APP_PROFILE;
+  let currentProfile: UserProfile;
+  if (profileEnv === '1') {
+    currentProfile = DemoUser1;
+  } else if (profileEnv === '2') {
+    currentProfile = DemoUser2;
+  } else {
+    currentProfile = AnonymousProfile;
+  }
+  return currentProfile;
+};
 
 export const App = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [submitting, setSubmitting] = useState<boolean>(false);
 
+  const currentProfile = loadCurrentUser();
+
   const socket = io('http://localhost:3001');
 
-  socket.on('connect', () => {
-    console.log(`socket id ${socket.id}: user connected`);
-  });
-
-  socket.on('connect_error', (err: any) => {
-    console.error(`connect_error: ${err}`);
-    console.error(err.message);
+  socket.on('connect_error', (err: Error) => {
+    console.error(`connect_error: ${err.message}`);
   });
 
   socket.on('message', (newMessage: Message) => {
-    console.log('in message', newMessage);
     setMessages([...messages, newMessage]);
   });
 
+  const handleHide = (item: Message) => {
+    setMessages(messages.filter(msg => msg.id !== item.id));
+  };
+
   const handleSubmit = (value: string) => {
-    console.log('in handleSubmit', value);
     setSubmitting(true);
     const message: Message = {
-      sender: socket.id,
+      id: uuidv4(),
+      sender: currentProfile ? currentProfile : AnonymousProfile,
       text: value,
       time: new Date(Date.now()),
     };
     socket.emit('send-message', message);
     setSubmitting(false);
   };
+
+  const commentActions = (item: Message) => [
+    <span key="message-hide" onClick={() => handleHide(item)}>
+      Hide
+    </span>,
+  ];
 
   return (
     <div style={{padding: '50px'}}>
@@ -48,9 +80,20 @@ export const App = () => {
         renderItem={item => (
           <li>
             <Comment
-              author={item.sender}
+              author={item.sender.username}
+              avatar={
+                item.sender.avatar ? (
+                  <Avatar
+                    src={item.sender.avatar.src}
+                    alt={item.sender.avatar.alt}
+                  />
+                ) : (
+                  <Avatar>{item.sender.username[0].toUpperCase()}</Avatar>
+                )
+              }
               content={item.text}
-              datetime={item.time}
+              datetime={dayjs(item.time).fromNow()}
+              actions={commentActions(item)}
             />
           </li>
         )}
