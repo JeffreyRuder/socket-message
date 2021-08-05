@@ -30,7 +30,10 @@ export const Editor = (props: EditorProps) => {
           disabled={value === ''}
           htmlType="submit"
           loading={submitting}
-          onClick={() => onSubmit(value)}
+          onClick={() => {
+            onSubmit(value);
+            setValue('');
+          }}
           type="primary"
         >
           Add Message

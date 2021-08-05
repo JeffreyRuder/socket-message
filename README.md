@@ -56,3 +56,5 @@ There are some basic front-end tests in the clint code base. Navigate to the `cl
 * Implement multiple message channels (such as `#homework` and `#general`)
 * Encrypt messages end-to-end
 * User management tools, like allowing a user to block or mute another user
+
+![Screenshot](screenshot1.png)
