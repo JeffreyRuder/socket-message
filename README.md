@@ -2,14 +2,14 @@
 
 ## About
 This project is a demonstration of a simple real-time messaging app. The main technologies used are React, Node, Socket.IO, and Typescript. Features:
-* Real-time messaging using [https://socket.io/](Socket.IO)
+* Real-time messaging using (Socket.IO)[https://socket.io/]
 * Users can have avatars
 * Users can hide messages after reading them
 * Message timestamps are displayed in relative time
-* Dependency management with [https://yarnpkg.com/](yarn)
-* Linting with [https://github.com/google/gts](Google GTS)
-* UI Components from [https://ant.design/](Ant Design)
-* Default React configuration from [https://create-react-app.dev/](Create React App)
+* Dependency management with [yarn](https://yarnpkg.com/)
+* Linting with [Google GTS](https://github.com/google/gts)
+* UI Components from [Ant Design](https://ant.design/)
+* Default React configuration from [Create React App](https://create-react-app.dev/)
 
 ## How to Run Locally
 To run this project locally in development/demo mode, you will need to run the server and one or more clients. You can do this by opening multiple bash terminal tabs, for example. This project uses [https://yarnpkg.com/](yarn) for package management and scripting, so you may want to install the yarn CLI on your machine.
